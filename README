@@ -1,0 +1,4 @@
+USB->GPIB adapter project which uses an AVR ATMega16U4 microcontroller. Project 
+files include schematics and PCB layout (made with KiCAD) and adapter firmware code.
+
+-Kalle Hyvönen, http://www.dgkelectronics.com
