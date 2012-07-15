@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sun 15 Jul 2012 06:25:58 PM EEST
+EESchema Schematic File Version 2  date Sun 15 Jul 2012 10:44:39 PM EEST
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -952,7 +952,7 @@ Wire Wire Line
 Wire Wire Line
 	9100 3100 9500 3100
 Wire Bus Line
-	9000 2200 9000 3000
+	9000 2200 9000 3100
 Wire Bus Line
 	8000 2200 8000 5200
 Wire Bus Line
@@ -1143,4 +1143,10 @@ Wire Wire Line
 	2050 1650 2050 2300
 Wire Wire Line
 	2050 2300 2250 2300
+Text Label 9150 3200 0    60   ~ 0
+REN B
+Entry Wire Line
+	9000 3100 9100 3200
+Wire Wire Line
+	9100 3200 9500 3200
 $EndSCHEMATC

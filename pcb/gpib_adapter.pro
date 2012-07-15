@@ -1,4 +1,4 @@
-update=Sun 15 Jul 2012 06:10:08 PM EEST
+update=Sun 15 Jul 2012 07:30:24 PM EEST
 version=1
 last_client=pcbnew
 [general]
@@ -58,8 +58,8 @@ EquName1=devcms
 version=1
 LastNetListRead=gpib_adapter.net
 PadDrlX=0
-PadDimH=236
-PadDimV=157
+PadDimH=1378
+PadDimV=807
 BoardThickness=630
 TxtPcbV=800
 TxtPcbH=600
@@ -91,3 +91,4 @@ LibName15=lib/CENTRONICS_24PIN_MALE_90_NorComp_112-024-113R001
 LibName16=lib/SOLPAD_3X2
 LibName17=lib/LED_16x08mm
 LibName18=lib/SWITCH_SMD
+LibName19=lib/USB_MINI-B_Molex_67503-1020
