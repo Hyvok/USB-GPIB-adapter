@@ -1,4 +1,4 @@
-update=Mon 16 Jul 2012 11:01:01 AM EEST
+update=Mon 16 Jul 2012 02:01:45 PM EEST
 version=1
 last_client=pcbnew
 [general]
@@ -95,3 +95,4 @@ LibName19=lib/SM0603_Capa_modified
 LibName20=lib/SM0805_modified
 LibName21=lib/SO20L_modified
 LibName22=lib/TQFP44_modified
+LibName23=lib/LED-0603_modified

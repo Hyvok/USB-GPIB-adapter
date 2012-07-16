@@ -1,4 +1,4 @@
-EESchema-LIBRARY Version 2.3  Date: Sun 15 Jul 2012 06:25:58 PM EEST
+EESchema-LIBRARY Version 2.3  Date: Mon 16 Jul 2012 01:56:33 PM EEST
 #encoding utf-8
 #
 # +5V
@@ -222,7 +222,7 @@ ENDDEF
 #
 DEF LED_X2 D 0 40 Y N 1 F N
 F0 "D" -25 250 50 H V C CNN
-F1 "LED_X2" 0 -100 50 H V C CNN
+F1 "LED_X2" 5 -160 50 H V C CNN
 $FPLIST
  LED-3MM
  LED-5MM
@@ -236,8 +236,14 @@ DRAW
 P 2 0 1 0  50 50  50 -50 N
 P 2 0 1 0  50 100  50 200 N
 P 3 0 1 0  -50 50  50 0  -50 -50 F
-P 3 0 1 0  65 -40  110 -80  105 -55 N
-P 3 0 1 0  80 -25  125 -65  120 -40 N
+P 3 0 1 0  0 -65  45 -105  40 -80 N
+P 3 0 1 0  0 -65  45 -105  40 -80 N
+P 3 0 1 0  0 -65  45 -105  40 -80 N
+P 3 0 1 0  0 -65  45 -105  40 -80 N
+P 3 0 1 0  15 -50  60 -90  55 -65 N
+P 3 0 1 0  15 -50  60 -90  55 -65 N
+P 3 0 1 0  15 -50  60 -90  55 -65 N
+P 3 0 1 0  15 -50  60 -90  55 -65 N
 P 4 0 1 0  -50 100  -50 200  50 150  -50 100 F
 X A 1 -200 0 150 R 40 40 1 1 P
 X K 2 200 0 150 L 40 40 1 1 P

@@ -1,14 +1,12 @@
-PCBNEW-LibModule-V1  Mon 16 Jul 2012 09:54:31 AM EEST
+PCBNEW-LibModule-V1  Mon 16 Jul 2012 01:58:49 PM EEST
 # encoding utf-8
 Units deci-mils
 $INDEX
-LED-0603
+LED-0603_modified
 $EndINDEX
-$MODULE LED-0603
-Po 10 0 0 15 5003BA97 00000000 ~~
-Li LED-0603
-Cd LED 0603 smd package
-Kw LED led 0603 SMD smd SMT smt smdled SMDLED smtled SMTLED
+$MODULE LED-0603_modified
+Po 1 0 0 15 5003BA97 00000000 ~~
+Li LED-0603_modified
 Sc 0
 AR /50027DF1
 Op 0 0 0
@@ -35,5 +33,5 @@ At SMD N 00888000
 Ne 1 "GND"
 Po 295 0
 $EndPAD
-$EndMODULE LED-0603
+$EndMODULE LED-0603_modified
 $EndLIBRARY

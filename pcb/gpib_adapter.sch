@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Sun 15 Jul 2012 10:44:39 PM EEST
+EESchema Schematic File Version 2  date Mon 16 Jul 2012 01:56:33 PM EEST
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -40,7 +40,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "15 jul 2012"
+Date "16 jul 2012"
 Rev ""
 Comp ""
 Comment1 ""
@@ -657,10 +657,10 @@ TXD
 $Comp
 L +5V #PWR016
 U 1 1 5001DC92
-P 9150 5000
-F 0 "#PWR016" H 9150 5090 20  0001 C CNN
-F 1 "+5V" H 9150 5090 30  0000 C CNN
-	1    9150 5000
+P 9200 5050
+F 0 "#PWR016" H 9200 5140 20  0001 C CNN
+F 1 "+5V" H 9200 5140 30  0000 C CNN
+	1    9200 5050
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -955,8 +955,6 @@ Wire Bus Line
 	9000 2200 9000 3100
 Wire Bus Line
 	8000 2200 8000 5200
-Wire Bus Line
-	8000 2200 10800 2200
 Wire Wire Line
 	9100 2600 9500 2600
 Wire Wire Line
@@ -1053,84 +1051,59 @@ Wire Wire Line
 $Comp
 L LED D1
 U 1 1 50027DF1
-P 8900 5750
-F 0 "D1" H 8900 5850 50  0000 C CNN
-F 1 "PWR" H 8900 5650 50  0000 C CNN
-F 3 "datasheets/APT1608QBC-D.pdf" H 8900 5750 60  0001 C CNN
-	1    8900 5750
-	0    1    1    0   
+P 8450 5200
+F 0 "D1" H 8450 5300 50  0000 C CNN
+F 1 "PWR" H 8450 5100 50  0000 C CNN
+F 3 "datasheets/APT1608QBC-D.pdf" H 8450 5200 60  0001 C CNN
+	1    8450 5200
+	-1   0    0    1   
 $EndComp
 $Comp
 L R R5
 U 1 1 50027E00
-P 8900 5250
-F 0 "R5" V 8980 5250 50  0000 C CNN
-F 1 "R" V 8900 5250 50  0000 C CNN
-	1    8900 5250
-	1    0    0    -1  
+P 8950 5200
+F 0 "R5" V 9030 5200 50  0000 C CNN
+F 1 "R" V 8950 5200 50  0000 C CNN
+	1    8950 5200
+	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	9550 5200 9150 5200
-Wire Wire Line
-	9150 5200 9150 5000
 $Comp
 L GND #PWR024
 U 1 1 50027FCC
-P 8900 6000
-F 0 "#PWR024" H 8900 6000 30  0001 C CNN
-F 1 "GND" H 8900 5930 30  0001 C CNN
-	1    8900 6000
+P 8250 5350
+F 0 "#PWR024" H 8250 5350 30  0001 C CNN
+F 1 "GND" H 8250 5280 30  0001 C CNN
+	1    8250 5350
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8900 5950 8900 6000
-Wire Wire Line
-	8900 5550 8900 5500
-Wire Wire Line
-	9150 5000 8900 5000
-Connection ~ 9150 5000
 $Comp
 L R R7
 U 1 1 50028616
-P 8600 5050
-F 0 "R7" V 8680 5050 50  0000 C CNN
-F 1 "R" V 8600 5050 50  0000 C CNN
-	1    8600 5050
-	1    0    0    -1  
+P 9000 4650
+F 0 "R7" V 9080 4650 50  0000 C CNN
+F 1 "R" V 9000 4650 50  0000 C CNN
+	1    9000 4650
+	0    1    1    0   
 $EndComp
 $Comp
 L LED_X2 D2
 U 1 1 500289DC
-P 8450 5750
-F 0 "D2" H 8425 6000 50  0000 C CNN
-F 1 "LED_X2" H 8450 5650 50  0000 C CNN
-F 3 "datasheets/APTB1612YSGC-F01.pdf" H 8450 5750 60  0001 C CNN
-	1    8450 5750
-	0    1    1    0   
+P 8450 4550
+F 0 "D2" H 8425 4800 50  0000 C CNN
+F 1 "LED_X2" H 8450 4400 50  0000 C CNN
+F 3 "datasheets/APTB1612YSGC-F01.pdf" H 8450 4550 60  0001 C CNN
+	1    8450 4550
+	-1   0    0    1   
 $EndComp
-Wire Wire Line
-	8600 5550 8600 5300
 $Comp
 L R R6
 U 1 1 50028B33
-P 8450 4900
-F 0 "R6" V 8530 4900 50  0000 C CNN
-F 1 "R" V 8450 4900 50  0000 C CNN
-	1    8450 4900
-	1    0    0    -1  
+P 9000 4550
+F 0 "R6" V 9080 4550 50  0000 C CNN
+F 1 "R" V 9000 4550 50  0000 C CNN
+	1    9000 4550
+	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	8450 5550 8450 5150
-Wire Wire Line
-	8450 5950 8900 5950
-Connection ~ 8600 5950
-Connection ~ 8900 5950
-Wire Wire Line
-	8600 4800 8600 4550
-Wire Wire Line
-	8600 4550 9550 4550
-Wire Wire Line
-	8450 4650 9550 4650
 Connection ~ 3700 2000
 Connection ~ 3850 5550
 Connection ~ 6600 1550
@@ -1149,4 +1122,27 @@ Entry Wire Line
 	9000 3100 9100 3200
 Wire Wire Line
 	9100 3200 9500 3200
+Wire Wire Line
+	9250 4550 9550 4550
+Wire Wire Line
+	9250 4650 9550 4650
+Wire Wire Line
+	8650 4550 8750 4550
+Wire Wire Line
+	8650 4700 8750 4700
+Wire Wire Line
+	8750 4700 8750 4650
+Wire Wire Line
+	9550 5200 9200 5200
+Wire Wire Line
+	9200 5200 9200 5050
+Connection ~ 9200 5200
+Wire Wire Line
+	8700 5200 8650 5200
+Wire Wire Line
+	8250 4550 8250 5350
+Connection ~ 8250 4700
+Connection ~ 8250 5200
+Wire Bus Line
+	8000 2200 10800 2200
 $EndSCHEMATC
