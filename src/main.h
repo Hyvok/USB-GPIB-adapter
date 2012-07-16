@@ -1,11 +1,11 @@
-#define DIOI1 PORTB0
-#define DIOI2 PORTB1
-#define DIOI3 PORTB2
-#define DIOI4 PORTB3
-#define DIOI5 PORTB4
-#define DIOI6 PORTB5
-#define DIOI7 PORTB6
-#define DIOI8 PORTB7
+#define DIO1 PORTB0
+#define DIO2 PORTB1
+#define DIO3 PORTB2
+#define DIO4 PORTB3
+#define DIO5 PORTB4
+#define DIO6 PORTB5
+#define DIO7 PORTB6
+#define DIO8 PORTB7
 
 #define IFC PORTC6
 #define REN PORTC7
