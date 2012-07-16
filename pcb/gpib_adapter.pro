@@ -1,4 +1,4 @@
-update=Mon 16 Jul 2012 03:56:17 PM EEST
+update=Mon 16 Jul 2012 04:39:48 PM EEST
 version=1
 last_client=pcbnew
 [general]
@@ -97,3 +97,4 @@ LibName21=lib/SO20L_modified
 LibName22=lib/TQFP44_modified
 LibName23=lib/LED-0603_modified
 LibName24=lib/dgk_electronics_logo_200x_SilkS
+LibName25=lib/pin_array_3x2_large_pads

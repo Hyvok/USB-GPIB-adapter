@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-07-14 BZR 3647)-testing date = Mon 16 Jul 2012 02:03:00 PM EEST
+Cmp-Mod V01 Created by CvPcb (2012-07-14 BZR 3647)-testing date = Mon 16 Jul 2012 04:39:07 PM EEST
 
 BeginCmp
 TimeStamp = /50016ED7;
@@ -99,10 +99,10 @@ IdModule  = USB_MINI-B_Molex_67503-1020;
 EndCmp
 
 BeginCmp
-TimeStamp = /4FFF0CDC;
+TimeStamp = /50041A7E;
 Reference = P3;
 ValeurCmp = GPIO;
-IdModule  = PIN_ARRAY_5X1_large_pads;
+IdModule  = pin_array_3x2_large_pads;
 EndCmp
 
 BeginCmp

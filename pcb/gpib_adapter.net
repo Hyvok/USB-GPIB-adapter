@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  Mon 16 Jul 2012 01:56:20 PM EEST
+# EESchema Netlist Version 1.1 created  Mon 16 Jul 2012 04:53:46 PM EEST
 (
  ( /4FB13545 $noname  C3 100n {Lib=C}
   (    1 +5V )
@@ -34,17 +34,10 @@
   (   23 GND )
   (   24 GND )
  )
- ( /4FFF0CDC $noname  P3 GPIO {Lib=CONN_5}
-  (    1 /GPIO1 )
-  (    2 /GPIO2 )
-  (    3 /GPIO3 )
-  (    4 /GPIO4 )
-  (    5 GND )
- )
  ( /4FFF132F $noname  P2 USB {Lib=CONN_5}
-  (    1 N-000006 )
-  (    2 N-000007 )
-  (    3 N-000030 )
+  (    1 N-000001 )
+  (    2 N-000002 )
+  (    3 N-000037 )
   (    4 GND )
   (    5 GND )
  )
@@ -59,7 +52,7 @@
   (    8 /DIO7 )
   (    9 /DIO8 )
   (   10 GND )
-  (   11 N-000039 )
+  (   11 N-000005 )
   (   12 /DIO8_B )
   (   13 /DIO7_B )
   (   14 /DIO6_B )
@@ -101,16 +94,16 @@
   (    2 GND )
  )
  ( /500131B6 $noname  R4 2.2k {Lib=R}
-  (    1 N-000039 )
+  (    1 N-000005 )
   (    2 +5V )
  )
  ( /50016CD8 TQFP44  IC1 ATMEGA16U4 {Lib=ATMEGA16U4}
   (    1 /TE )
   (    2 +5V )
-  (    3 N-000009 )
-  (    4 N-000008 )
+  (    3 N-000004 )
+  (    4 N-000003 )
   (    5 GND )
-  (    6 N-000005 )
+  (    6 N-000007 )
   (    7 VCC )
   (    8 /DIO1 )
   (    9 /DIO2 )
@@ -141,7 +134,7 @@
   (   34 +5V )
   (   35 GND )
   (   36 /DC )
-  (   37 ? )
+  (   37 /GPIO5 )
   (   38 /GPIO4 )
   (   39 /GPIO3 )
   (   40 /GPIO2 )
@@ -167,19 +160,19 @@
   (    2 GND )
  )
  ( /5001753E $noname  R2 22 {Lib=R}
-  (    1 N-000007 )
-  (    2 N-000009 )
+  (    1 N-000002 )
+  (    2 N-000004 )
  )
  ( /50017550 $noname  R3 22 {Lib=R}
-  (    1 N-000030 )
-  (    2 N-000008 )
+  (    1 N-000037 )
+  (    2 N-000003 )
  )
  ( /50017778 $noname  L1 Ferrite {Lib=INDUCTOR}
-  (    1 N-000006 )
+  (    1 N-000001 )
   (    2 VCC )
  )
  ( /50017BB9 $noname  C4 1µ {Lib=C}
-  (    1 N-000005 )
+  (    1 N-000007 )
   (    2 GND )
  )
  ( /5001D779 $noname  P4 UART {Lib=CONN_4}
@@ -203,26 +196,34 @@
   (    6 GND )
  )
  ( /50027DF1 $noname  D1 PWR {Lib=LED}
-  (    1 N-000024 )
+  (    1 N-000025 )
   (    2 GND )
  )
  ( /50027E00 $noname  R5 R {Lib=R}
-  (    1 N-000024 )
+  (    1 N-000025 )
   (    2 +5V )
  )
  ( /50028616 $noname  R7 R {Lib=R}
   (    1 /RXD )
-  (    2 N-000028 )
+  (    2 N-000022 )
  )
  ( /500289DC $noname  D2 LED_X2 {Lib=LED_X2}
-  (    1 N-000032 )
+  (    1 N-000021 )
   (    2 GND )
-  (    3 N-000028 )
+  (    3 N-000022 )
   (    4 GND )
  )
  ( /50028B33 $noname  R6 R {Lib=R}
-  (    1 N-000032 )
+  (    1 N-000021 )
   (    2 /TXD )
+ )
+ ( /50041A7E $noname  P3 GPIO {Lib=CONN_3X2}
+  (    1 /GPIO1 )
+  (    2 /GPIO2 )
+  (    3 /GPIO3 )
+  (    4 /GPIO4 )
+  (    5 /GPIO5 )
+  (    6 GND )
  )
 )
 *
@@ -340,225 +341,228 @@ $endlist
 $endfootprintlist
 }
 { Pin List by Nets
-Net 1 "/DIO8" "DIO8"
- IC1 12
- U1 9
-Net 2 "/DIO7" "DIO7"
- IC1 30
- U1 8
-Net 3 "/DIO6" "DIO6"
- U1 7
- IC1 29
-Net 4 "/DIO5" "DIO5"
- IC1 28
- U1 6
-Net 5 "" ""
- C4 1
- IC1 6
-Net 6 "" ""
- L1 1
+Net 1 "" ""
  P2 1
-Net 7 "" ""
+ L1 1
+Net 2 "" ""
  R2 1
  P2 2
-Net 8 "" ""
+Net 3 "" ""
  R3 2
  IC1 4
-Net 9 "" ""
+Net 4 "" ""
  R2 2
  IC1 3
-Net 10 "GND" "GND"
- P2 4
- P3 5
- D1 2
+Net 5 "" ""
+ R4 1
+ U1 11
+Net 6 "/NRFD" "NRFD"
+ IC1 26
+ U2 5
+Net 7 "" ""
+ C4 1
+ IC1 6
+Net 8 "VDD" "VDD"
+ P4 3
+ P6 3
+Net 9 "GND" "GND"
  P5 24
- U2 10
- C7 2
+ C2 2
  P5 23
- D2 4
- C8 2
- D2 2
- U1 10
- C3 2
- P1 6
  P2 5
- P5 20
+ C8 2
+ IC1 5
  P5 18
+ P5 19
+ P3 6
+ C3 2
+ U1 10
+ P2 4
+ C1 2
+ C4 2
+ D1 2
+ P5 20
+ D2 2
  P5 21
+ D2 4
  P5 12
  P5 22
- IC1 5
- P6 4
- C1 2
- C2 2
  C5 2
+ U2 10
  C6 2
+ IC1 23
  IC1 43
  IC1 35
  IC1 15
- IC1 23
  P4 4
- C4 2
- P5 19
-Net 11 "VCC" "VCC"
- L1 2
+ P1 6
+ P6 4
+ C7 2
+Net 10 "VCC" "VCC"
  IC1 7
+ L1 2
  P6 1
-Net 12 "VDD" "VDD"
- P4 3
- P6 3
-Net 13 "/TXD" "TXD"
+Net 11 "/NDAC" "NDAC"
+ IC1 27
+ U2 4
+Net 12 "/IFC" "IFC"
+ U2 3
+ IC1 31
+Net 13 "/REN" "REN"
+ U2 2
+ IC1 32
+Net 14 "/DIO8" "DIO8"
+ U1 9
+ IC1 12
+Net 15 "/DIO7" "DIO7"
+ U1 8
+ IC1 30
+Net 16 "/DIO6" "DIO6"
+ U1 7
+ IC1 29
+Net 17 "/DIO5" "DIO5"
+ U1 6
+ IC1 28
+Net 18 "/DIO1" "DIO1"
+ IC1 8
+ U1 2
+Net 19 "/TE" "TE"
+ IC1 1
+ U2 1
+ U1 1
+Net 20 "/TXD" "TXD"
  R6 2
  P4 1
  IC1 21
-Net 14 "/NDAC B" "NDAC B"
- P5 8
- U2 17
-Net 15 "/ATN B" "ATN B"
- P5 11
- U2 13
-Net 16 "/SRQ B" "SRQ B"
- U2 12
- P5 10
-Net 17 "/IFC B" "IFC B"
- U2 18
- P5 9
-Net 18 "/DAV B" "DAV B"
- U2 15
- P5 6
-Net 19 "/NRFD B" "NRFD B"
- P5 7
- U2 16
-Net 20 "/EOI B" "EOI B"
- P5 5
- U2 14
-Net 21 "/DIO1" "DIO1"
- IC1 8
- U1 2
-Net 22 "/RXD" "RXD"
- IC1 20
+Net 21 "" ""
+ D2 1
+ R6 1
+Net 22 "" ""
+ R7 2
+ D2 3
+Net 23 "/RXD" "RXD"
  P4 2
+ IC1 20
  R7 1
-Net 23 "+5V" "+5V"
- R1 2
- R5 2
- P1 2
- C7 1
- C3 1
+Net 24 "+5V" "+5V"
+ U2 20
+ R4 2
+ C1 1
  IC1 14
  IC1 24
  IC1 34
  IC1 44
- R4 2
- IC1 2
+ C3 1
  C6 1
  C5 1
+ IC1 2
  C2 1
- C1 1
- P6 2
- U2 20
  U1 20
+ R1 2
  C8 1
-Net 24 "" ""
+ P6 2
+ R5 2
+ P1 2
+ C7 1
+Net 25 "" ""
  R5 1
  D1 1
-Net 25 "/Res" "Res"
+Net 26 "/Res" "Res"
  P1 3
  R1 1
  IC1 13
-Net 26 "/DIO2" "DIO2"
- IC1 9
+Net 27 "/DIO2" "DIO2"
  P1 5
+ IC1 9
  U1 3
-Net 27 "/DIO4" "DIO4"
+Net 28 "/DIO4" "DIO4"
  U1 5
- P1 1
  IC1 11
-Net 28 "" ""
- D2 3
- R7 2
-Net 29 "/DIO3" "DIO3"
+ P1 1
+Net 29 "/GPIO5" "GPIO5"
+ IC1 37
+ P3 5
+Net 30 "/GPIO4" "GPIO4"
+ P3 4
+ IC1 38
+Net 31 "/GPIO2" "GPIO2"
+ P3 2
+ IC1 40
+Net 32 "/GPIO3" "GPIO3"
+ P3 3
+ IC1 39
+Net 33 "/GPIO1" "GPIO1"
+ P3 1
+ IC1 41
+Net 34 "/REN B" "REN B"
+ P5 17
+ U2 19
+Net 35 "/DC" "DC"
+ U2 11
+ IC1 36
+Net 36 "/DIO3" "DIO3"
  U1 4
  IC1 10
  P1 4
-Net 30 "" ""
- P2 3
+Net 37 "" ""
  R3 1
-Net 31 "/REN B" "REN B"
- P5 17
- U2 19
-Net 32 "" ""
- R6 1
- D2 1
-Net 33 "/GPIO1" "GPIO1"
- IC1 41
- P3 1
-Net 34 "/GPIO4" "GPIO4"
- P3 4
- IC1 38
-Net 35 "/GPIO3" "GPIO3"
- IC1 39
- P3 3
-Net 36 "/GPIO2" "GPIO2"
- P3 2
- IC1 40
-Net 37 "/DC" "DC"
- IC1 36
- U2 11
-Net 38 "/TE" "TE"
- U1 1
- IC1 1
- U2 1
-Net 39 "" ""
- R4 1
- U1 11
-Net 40 "/DIO1 B" "DIO1 B"
- U1 19
- P5 1
-Net 41 "/DIO8 B" "DIO8 B"
- U1 12
- P5 16
-Net 42 "/DIO7 B" "DIO7 B"
- U1 13
- P5 15
-Net 43 "/DIO6 B" "DIO6 B"
- P5 14
- U1 14
-Net 44 "/DIO5 B" "DIO5 B"
- U1 15
- P5 13
-Net 45 "/DIO4 B" "DIO4 B"
- P5 4
- U1 16
-Net 46 "/DIO3 B" "DIO3 B"
- P5 3
- U1 17
-Net 47 "/DIO2 B" "DIO2 B"
+ P2 3
+Net 38 "/DIO2 B" "DIO2 B"
  U1 18
  P5 2
-Net 48 "/NDAC" "NDAC"
- IC1 27
- U2 4
-Net 49 "/SRQ" "SRQ"
- U2 9
+Net 39 "/DIO1 B" "DIO1 B"
+ U1 19
+ P5 1
+Net 40 "/DIO3 B" "DIO3 B"
+ U1 17
+ P5 3
+Net 41 "/IFC B" "IFC B"
+ P5 9
+ U2 18
+Net 42 "/NDAC B" "NDAC B"
+ U2 17
+ P5 8
+Net 43 "/ATN B" "ATN B"
+ U2 13
+ P5 11
+Net 44 "/SRQ B" "SRQ B"
+ U2 12
+ P5 10
+Net 45 "/DAV B" "DAV B"
+ U2 15
+ P5 6
+Net 46 "/NRFD B" "NRFD B"
+ U2 16
+ P5 7
+Net 47 "/EOI B" "EOI B"
+ U2 14
+ P5 5
+Net 48 "/DIO8 B" "DIO8 B"
+ U1 12
+ P5 16
+Net 49 "/DIO7 B" "DIO7 B"
+ P5 15
+ U1 13
+Net 50 "/DIO6 B" "DIO6 B"
+ U1 14
+ P5 14
+Net 51 "/DIO5 B" "DIO5 B"
+ U1 15
+ P5 13
+Net 52 "/DIO4 B" "DIO4 B"
+ P5 4
+ U1 16
+Net 53 "/SRQ" "SRQ"
  IC1 22
-Net 50 "/ATN" "ATN"
- U2 8
+ U2 9
+Net 54 "/ATN" "ATN"
  IC1 19
-Net 51 "/EOI" "EOI"
- IC1 25
+ U2 8
+Net 55 "/EOI" "EOI"
  U2 7
-Net 52 "/DAV" "DAV"
- U2 6
+ IC1 25
+Net 56 "/DAV" "DAV"
  IC1 18
-Net 53 "/NRFD" "NRFD"
- U2 5
- IC1 26
-Net 54 "/IFC" "IFC"
- U2 3
- IC1 31
-Net 55 "/REN" "REN"
- IC1 32
- U2 2
+ U2 6
 }
 #End
