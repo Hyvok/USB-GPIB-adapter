@@ -1,4 +1,4 @@
-update=Mon 16 Jul 2012 02:01:45 PM EEST
+update=Mon 16 Jul 2012 03:56:17 PM EEST
 version=1
 last_client=pcbnew
 [general]
@@ -57,9 +57,9 @@ EquName1=devcms
 [pcbnew]
 version=1
 LastNetListRead=gpib_adapter.net
-PadDrlX=0
-PadDimH=213
-PadDimV=600
+PadDrlX=1260
+PadDimH=1969
+PadDimV=1969
 BoardThickness=630
 TxtPcbV=800
 TxtPcbH=600
@@ -96,3 +96,4 @@ LibName20=lib/SM0805_modified
 LibName21=lib/SO20L_modified
 LibName22=lib/TQFP44_modified
 LibName23=lib/LED-0603_modified
+LibName24=lib/dgk_electronics_logo_200x_SilkS

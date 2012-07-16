@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2  date Mon 16 Jul 2012 01:56:33 PM EEST
+EESchema Schematic File Version 2  date Mon 16 Jul 2012 03:40:06 PM EEST
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -835,7 +835,6 @@ Wire Wire Line
 Wire Wire Line
 	1700 3250 1700 3450
 Connection ~ 1700 3350
-Connection ~ 1700 3250
 Wire Wire Line
 	2900 3600 2800 3600
 Wire Wire Line
