@@ -1,0 +1,41 @@
+PCBNEW-LibModule-V1  Mon 16 Jul 2012 09:40:47 AM EEST
+# encoding utf-8
+Units deci-mils
+$INDEX
+SM0603_Capa_modified
+$EndINDEX
+$MODULE SM0603_Capa_modified
+Po -9 0 0 15 5003B69C 00000000 ~~
+Li SM0603_Capa_modified
+Sc 0
+AR /50012ADD
+Op 0 0 0
+At SMD
+T0 0 -669 591 591 0 118 N V 21 N "C8"
+T1 0 0 200 180 0 45 N I 21 N "100n"
+DS -492 295 492 295 118 21
+DS 492 295 492 -295 118 21
+DS -492 -295 -492 295 118 21
+DS -492 -295 492 -295 118 21
+$PAD
+Sh "1" R 250 450 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 1 "+5V"
+Po -300 0
+$EndPAD
+$PAD
+Sh "2" R 250 450 0 0 0
+Dr 0 0 0
+At SMD N 00888000
+Ne 2 "GND"
+Po 300 0
+$EndPAD
+$SHAPE3D
+Na "smd\\capacitors\\C0603.wrl"
+Sc 0.5 0.5 0.5
+Of 0 0 0.001
+Ro 0 0 0
+$EndSHAPE3D
+$EndMODULE SM0603_Capa_modified
+$EndLIBRARY
