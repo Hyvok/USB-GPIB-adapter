@@ -22,9 +22,6 @@
 #define GPIO5 PORTF6
 #define DC PORTF7
 
-// Internal RC oscillator, 8MHz
-#define F_CPU 8000000UL
-
 #define USART_BAUDRATE 9600 
 #define BAUD_PRESCALE (((F_CPU / (USART_BAUDRATE * 16UL))) - 1) 
 

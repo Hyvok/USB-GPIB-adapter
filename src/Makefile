@@ -10,7 +10,8 @@ ISP_FLAGS		=	-p m16u4 -P /dev/ttyUSB0
 CC				=	avr-gcc
 OBJCOPY			=	avr-objcopy
 CC_FLAGS     	= 	-DUSE_LUFA_CONFIG_HEADER -IConfig/
-CFLAGS			=	-g -Os -Wall -mcall-prologues -mmcu=atmega16u4 -std=c99
+CFLAGS			=	-g -Os -Wall -mcall-prologues -mmcu=atmega16u4 -std=c99 \
+					-DF_CPU=$(F_CPU) -DF_USB=$(F_USB) $(CC_FLAGS)
 SRC				=	$(TARGET).c Descriptors.c $(LUFA_SRC_USB) $(LUFA_SRC_USBCLASS)
 LUFA_PATH    	= 	./lib/LUFA
 
