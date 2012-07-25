@@ -39,9 +39,9 @@
 	/* Includes: */
 		#include <avr/pgmspace.h>
 
-		#include "./lib/LUFA/Drivers/USB/USB.h"
+		#include "lib/LUFA/Drivers/USB/USB.h"
 		
-		#include "./Config/AppConfig.h"
+		#include "conf/AppConfig.h"
 
 	/* Type Defines: */
 		/** Type define for the device configuration descriptor structure. This must be defined in the
@@ -65,12 +65,11 @@
 		/** Size in bytes of the Generic HID reporting endpoint. */
 		#define GENERIC_EPSIZE            8
 
-	/* Function Prototypes:
+	/* Function Prototypes: */
 		uint16_t CALLBACK_USB_GetDescriptor(const uint16_t wValue,
 		                                    const uint8_t wIndex,
-		                                    const void** const DescriptorAddress)
+		                                    const void** const DescriptorAddress, uint8_t* const DescriptorMemorySpace)
 		                                    ATTR_WARN_UNUSED_RESULT ATTR_NON_NULL_PTR_ARG(3);
-	*/
 
 #endif
 

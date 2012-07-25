@@ -36,6 +36,7 @@
  */
 
 #include "Descriptors.h"
+#include "conf/LUFAConfig.h"
 
 /** HID class report descriptor. This is a special descriptor constructed with values from the
  *  USBIF HID class specification to describe the reports and capabilities of the HID device. This
@@ -175,14 +176,16 @@ const USB_Descriptor_String_t PROGMEM ProductString =
 	.UnicodeString          = L"LUFA Generic HID Demo"
 };
 
-/** This function is called by the library when in device mode, and must be overridden (see library "USB Descriptors"
+/* This function is called by the library when in device mode, and must be overridden (see library "USB Descriptors"
  *  documentation) by the application code so that the address and size of a requested descriptor can be given
  *  to the USB library. When the device receives a Get Descriptor request on the control endpoint, this function
  *  is called so that the descriptor details can be passed back and the appropriate descriptor sent back to the
  *  USB host.
+*/
 uint16_t CALLBACK_USB_GetDescriptor(const uint16_t wValue,
                                     const uint8_t wIndex,
-                                    const void** const DescriptorAddress)
+                                    const void** const DescriptorAddress, 
+									uint8_t* const DescriptorMemorySpace)
 {
 	const uint8_t  DescriptorType   = (wValue >> 8);
 	const uint8_t  DescriptorNumber = (wValue & 0xFF);
@@ -231,5 +234,4 @@ uint16_t CALLBACK_USB_GetDescriptor(const uint16_t wValue,
 	*DescriptorAddress = Address;
 	return Size;
 }
-*/
 

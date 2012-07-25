@@ -1,7 +1,6 @@
 #include "GPIBAdapter.h"
 
-volatile uint8_t USART_ReceivedByte;
-
+#ifdef USB
 /** Buffer to hold the previously generated HID report, for comparison purposes inside the HID class driver. */
 static uint8_t PrevHIDReportBuffer[GENERIC_REPORT_SIZE];
 
@@ -60,12 +59,12 @@ void EVENT_USB_Device_StartOfFrame(void) {
  *
  *  \return Boolean true to force the sending of the report, false to let the library determine if it needs to be sent
  */
-bool CALLBACK_HID_Device_CreateHIDReport(USB_ClassInfo_HID_Device_t* const HIDInterfaceInfo,
-                                         uint8_t* const ReportID,
-                                         const uint8_t ReportType,
-                                         void* ReportData,
-                                         uint16_t* const ReportSize)
-{
+bool CALLBACK_HID_Device_CreateHIDReport(
+											USB_ClassInfo_HID_Device_t* const HIDInterfaceInfo, 
+											uint8_t* const ReportID, 
+											const uint8_t ReportType, 
+											void* ReportData, 
+											uint16_t* const ReportSize) {
 	uint8_t* Data = (uint8_t*)ReportData;
 	/* Example code:
 	uint8_t  CurrLEDMask = LEDs_GetLEDs();
@@ -86,11 +85,12 @@ bool CALLBACK_HID_Device_CreateHIDReport(USB_ClassInfo_HID_Device_t* const HIDIn
  *  \param[in] ReportData  Pointer to a buffer where the received report has been stored
  *  \param[in] ReportSize  Size in bytes of the received HID report
  */
-void CALLBACK_HID_Device_ProcessHIDReport(USB_ClassInfo_HID_Device_t* const HIDInterfaceInfo,
-                                          const uint8_t ReportID,
-                                          const uint8_t ReportType,
-                                          const void* ReportData,
-                                          const uint16_t ReportSize) {
+void CALLBACK_HID_Device_ProcessHIDReport(
+											USB_ClassInfo_HID_Device_t* const HIDInterfaceInfo, 
+											const uint8_t ReportID, 
+											const uint8_t ReportType, 
+											const void* ReportData, 
+											const uint16_t ReportSize) {
 	uint8_t* Data = (uint8_t*)ReportData;
 	/* Example code:
 	uint8_t  NewLEDMask = LEDS_NO_LEDS;
@@ -110,32 +110,8 @@ void CALLBACK_HID_Device_ProcessHIDReport(USB_ClassInfo_HID_Device_t* const HIDI
 	LEDs_SetAllLEDs(NewLEDMask);
 	*/
 }
-void USART_Init(void) {
-
-	// Load upper 8-bits of the baud rate value into the high byte of the UBRR register
-	UBRR1H = (BAUD_PRESCALE >> 8);
-	// Load lower 8-bits of the baud rate value into the low byte of the UBRR register 
-	UBRR1L = BAUD_PRESCALE; 
-
-	// Set frame format to 8 data bits, no parity, 1 stop bit
-	UCSR1C = (0<<USBS1)|(1<<UCSZ11)|(1<<UCSZ10);
-
-	// Enable receiver and transmitter
-	UCSR1B = (1<<RXEN1)|(1<<TXEN1);
-}
-void USART_SendByte(uint8_t data) {
-
-	// Wait if a byte is being transmitted, after finished transmit new data
-	while((UCSR1A&(1<<UDRIE1)) == 0);
-	UDR1 = data;
-}
-uint8_t USART_ReceiveByte() {
-
-	// Wait until a byte has been received
-	while((UCSR1A&(1<<RXC1)) == 0);
-	return UDR1;
-}
-int main() {
+#endif
+int main(void) {
 
 	// Interrupts disabled at boot
 	cli();
@@ -153,22 +129,37 @@ int main() {
 	DDRF = 0x80;
 	PORTF = 0x73;
 
+	// Configure interrupt on falling edge of INT0 (DAV)
+	EICRA |= (1<<ISC01);
+	EICRA &= ~(1<<ISC00);
+
 	// Start and configure USART
 	USART_Init();
 
+#ifdef USB
 	// Start USB
 	USB_Init();
+#endif
 
 	// Interrupts enabled after configuration
 	sei();
 	while(1) {
-		// Keep checking USB
+#ifdef USB
+		// Poll USB, TODO something about the data if received
 		HID_Device_USBTask(&Generic_HID_Interface);
 		USB_USBTask();
+#endif
+		// Poll SRQ
+		if((PORTD & (1<<SRQ)) == HIGH) { serviceRequest(); }
+
+		// Poll UART
+		if(receiveFlag == true) { /* TODO: Do something about the data */ }
 	}
 }
-ISR(USART1_RX_vect) {
- 
-	// Fetch the received byte value into the global variable "USART_ReceivedByte"
-	USART_ReceivedByte = UDR1;
+ISR(USART1_TX_vect){ transmitInterrupt(); }
+ISR(USART1_RX_vect){ receiveInterrupt(); }
+ISR(INT0_vect) {
+
+// TODO: something when DAV goes HIGH
+
 }
