@@ -18,9 +18,9 @@ FUSES			= 	-U lfuse:w:0xe2:m -U hfuse:w:0x98:m -U efuse:w:0xf0:m
 CC				=	avr-gcc
 OBJCOPY			=	avr-objcopy
 CPPFLAGS     	= 	-DUSE_LUFA_CONFIG_HEADER -Iconf/ -DF_CPU=$(F_CPU) -DF_USB=$(F_USB) -DUSB
-CFLAGS			=	-g -O$(OPTIMIZATION) -Wall -mcall-prologues -mmcu=atmega16u4 -std=c99
+CFLAGS			=	-g -Wall -mcall-prologues -mmcu=atmega16u4 -std=c99
 #SRC			=	$(TARGET).c Descriptors.c $(LUFA_SRC_USB) $(LUFA_SRC_USBCLASS)
-SRC				=	$(TARGET).c lib/GPIB.c lib/USART.c Descriptors.c $(LUFA_SRC_USB) $(LUFA_SRC_USBCLASS)
+SRC				=	$(TARGET).c lib/GPIB.c lib/USB.c lib/USART.c Descriptors.c $(LUFA_SRC_USB) $(LUFA_SRC_USBCLASS)
 LUFA_PATH    	= 	./lib/LUFA
 
 all:
